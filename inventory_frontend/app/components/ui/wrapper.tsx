@@ -2,7 +2,7 @@ import { Link } from "@remix-run/react";
 
 export default function Wrapper({children}){
     return (
-        <div className= "w-screen h-screen">
+        <div className= "w-screen h-screen container">
             <nav className="w-full h-10 bg-slate-400"></nav>
             <div className="w-full h-4/5 flex flex-row">
                 <div className="w-2/12 h-full bg-slate-100  ">

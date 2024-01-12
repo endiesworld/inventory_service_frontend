@@ -1,20 +1,19 @@
 import type { MetaFunction } from "@remix-run/node";
-import Wrapper from '../components/wrapper' ;
-import Products from '../components/products';
+import LandingPage from '../components/ui/landingpage';
+
 
 export const meta: MetaFunction = () => {
   return [
     { title: "Emma Store" },
-    { name: "description", content: "Payment Serviceow!" },
+    { name: "description", content: "inventory Service!" },
   ];
 };
+
 
 export default function Index() {
   return (
     <div className="w-screen h-screen">
-      <Wrapper>
-        <Products />
-      </Wrapper>
+      <LandingPage />
     </div>
   );
 }
