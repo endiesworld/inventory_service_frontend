@@ -14,12 +14,12 @@ export default function Signin() {
                 alt="Inventory Service"
                 className="w-1/2 h-screen object-center"
             />
-            <Form action="/" method="post" className="bg-slate-300 flex h-1/3 w-2/3 flex-col gap-y-4 overflow-x-hidden px-10 pb-28 pt-12">
+            <Form action="/" method="post" className="bg-blue-500 p-8 shadow-md rounded-md italic font-bold flex h-1/3 w-2/3 flex-col gap-y-4 overflow-x-hidden px-10 pb-28 pt-12 max-w-xl">
                 <label htmlFor='username' > Username</label>
                 <Input name="username" type="text" defaultValue='username'/>
                 <label htmlFor='password'> Password</label>
                 <Input name="password" type="password" />
-                <Button>submit</Button>
+                <Button className='relative top-8 hover:bg-yellow-500 italic bg-yellow-300 w-1/3 self-center px-4 py-2'>submit</Button>
             </Form>
         </div>
     );
