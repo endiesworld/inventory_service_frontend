@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import InventorySVG from '../../assets/ilustration2.svg'; // Replace with the actual path to your SVG file
 
 const LandingPage = () => {
@@ -14,9 +15,14 @@ const LandingPage = () => {
                     <p className="text-yellow-300 mb-6 text-center">
                         An efficient inventory service is user-friendly, offers real-time tracking, integrates with other systems, scales easily, includes automation features, provides robust reporting, ensures reliability and support, prioritizes security, is cost-effective, and receives positive customer reviews for its practical benefits.
                     </p>
-                    <button className=" self-center text-blue-500 px-4 py-2 w-1/3 rounded-md bg-slate-50 hover:bg-slate-200">
-                        Get Started
-                    </button>
+                    <Link to='../signin' className=" self-center w-1/3">
+                        <button className=" self-center text-blue-500 px-4 py-2 w-full rounded-md bg-slate-50 hover:bg-slate-200">
+                           
+                            
+                                Get Started
+                            
+                        </button>
+                    </Link>
                 </div>
                 
             </div>
