@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import {Form } from "@remix-run/react";
 
 export default function Products({products_}) {
     return (
@@ -20,10 +20,15 @@ export default function Products({products_}) {
                             <td className="border-separate border border-slate-400">{product.name}</td>
                             <td className="border-separate border border-slate-400">{product.price}</td>
                             <td className="border-separate border border-slate-400">{product.quantity}</td>
-                            <td className="border-separate border border-slate-400">
-                                <Link to= {`${product.id}`} >
-                                    <button className="btn w-2/3 h-2/3 bg-indigo-500 rounded-lg"> Action </button>
-                                </Link>
+                            <td className="border-separate border border-slate-400 ">
+                                <Form method="POST" className="inline-flex">
+                                    <button name="intent" value="update" className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                                        Update
+                                    </button>
+                                    <button name="intent" value="delete" className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                                        Delete
+                                    </button>
+                                </Form>
                             </td>
                         </tr>
                     )}

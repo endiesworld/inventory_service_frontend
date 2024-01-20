@@ -1,8 +1,8 @@
 
-export default function ProduductEdit() {
+export default function ProductDelete() {
     return (
         <div className="w-screen h-screen">
-            PRODUCT EDIT
+            PRODUCT DELETE PAGE
         </div>
     );
 }

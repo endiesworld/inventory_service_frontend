@@ -1,7 +1,20 @@
+import { redirect, type ActionFunctionArgs, } from '@remix-run/node'
 import  { json } from "@remix-run/node";
 import Wrapper from '../components/ui/wrapper';
 import Products from '../components/ui/products';
 import { useLoaderData } from "@remix-run/react";
+
+export async function action({
+    params,
+    request
+}: ActionFunctionArgs) {
+    const formData = await request.formData()
+    const intent = formData.get('intent')
+    const username = params.username
+    const productId = params.productId
+    const redirect_ = intent == 'update' ? `/users/${username}/inventory/edit/${productId}` : `/users/${username}/inventory/delete/${productId}`
+    return redirect(redirect_);
+}
 
 // Type to describe the data we get from the API
 type Inventory = {
