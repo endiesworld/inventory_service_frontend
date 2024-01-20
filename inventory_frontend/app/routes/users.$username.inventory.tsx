@@ -23,11 +23,11 @@ export async function action({
         else if (task === 'delete') {
             redirect_ = `/users/${username}/inventory/delete/${productId}`
         }
+        else {
+            redirect_ = `/users/${username}/inventory/new-product`
+        }
     }
     
-    else{
-        redirect_ = `/users/${username}/inventory/new-product`
-    }
     return redirect(redirect_);
 }
 
