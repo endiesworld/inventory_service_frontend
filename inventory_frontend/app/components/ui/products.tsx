@@ -22,10 +22,10 @@ export default function Products({products_}) {
                             <td className="border-separate border border-slate-400">{product.quantity}</td>
                             <td className="border-separate border border-slate-400 ">
                                 <Form method="POST" className="inline-flex">
-                                    <button name="intent" value="update" className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                                    <button name="intent" value={`update ${product.id}`} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
                                         Update
                                     </button>
-                                    <button name="intent" value="delete" className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                                    <button name="intent" value={`delete ${product.id}`} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
                                         Delete
                                     </button>
                                 </Form>

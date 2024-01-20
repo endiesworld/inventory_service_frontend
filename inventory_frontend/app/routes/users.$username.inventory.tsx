@@ -9,16 +9,22 @@ export async function action({
     request
 }: ActionFunctionArgs) {
     const formData = await request.formData()
-    const intent = formData.get('intent')
+    const intentValue: FormDataEntryValue | null = formData.get('intent');
+    const intent: string | null = typeof intentValue === 'string' ? intentValue : null;
+    const words = intent ? intent.split(' ') : [];
     const username = params.username
-    const productId = params.productId
     let redirect_ = '/'
-    if (intent === 'update') {
-        redirect_ = `/users/${username}/inventory/edit/${productId}` 
+    if (words){
+        const task = words[0]
+        const productId = words[1]
+        if (task === 'update') {
+            redirect_ = `/users/${username}/inventory/edit/${productId}`
+        }
+        else if (task === 'delete') {
+            redirect_ = `/users/${username}/inventory/delete/${productId}`
+        }
     }
-    else if (intent === 'delete'){
-        redirect_ = `/users/${username}/inventory/delete/${productId}`
-    }
+    
     else{
         redirect_ = `/users/${username}/inventory/new-product`
     }
