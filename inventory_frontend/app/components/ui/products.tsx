@@ -2,7 +2,7 @@ import {Form } from "@remix-run/react";
 
 export default function Products({products_}) {
     return (
-        <div className="container w-full h-fit">
+        <div className="container w-full h-fit flex flex-col gap-y-4">
             <table className="w-full table-auto border-separate border border-slate-400 text-left">
                 <thead className="h-12 bg-slate-200 ">
                     <tr>
@@ -34,6 +34,11 @@ export default function Products({products_}) {
                     )}
                 </tbody>
             </table>
+            <Form method="POST" className="inline-flex self-center">
+                <button name="intent" value="New Product" className="bg-green-200 hover:bg-green-300 text-gray-800 font-bold py-2 px-4 rounded-l">
+                    New Product
+                </button>
+            </Form>
         </div>
     );
 }

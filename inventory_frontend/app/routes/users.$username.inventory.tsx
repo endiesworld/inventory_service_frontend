@@ -12,7 +12,16 @@ export async function action({
     const intent = formData.get('intent')
     const username = params.username
     const productId = params.productId
-    const redirect_ = intent == 'update' ? `/users/${username}/inventory/edit/${productId}` : `/users/${username}/inventory/delete/${productId}`
+    let redirect_ = '/'
+    if (intent === 'update') {
+        redirect_ = `/users/${username}/inventory/edit/${productId}` 
+    }
+    else if (intent === 'delete'){
+        redirect_ = `/users/${username}/inventory/delete/${productId}`
+    }
+    else{
+        redirect_ = `/users/${username}/inventory/new-product`
+    }
     return redirect(redirect_);
 }
 
@@ -26,12 +35,8 @@ type Inventory = {
 
 export async function loader(){
     const response = await fetch("http://localhost:5000/api/inventory/products");
-
     const products: Inventory[] = await response.json();
-    
-    // Return the data as JSON
     return json({ products });
-
 }
 
 export default function Inventory() {

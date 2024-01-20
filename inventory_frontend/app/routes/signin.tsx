@@ -25,9 +25,9 @@ export default function Signin() {
             />
             <Form method="POST" className="bg-blue-500 p-8 shadow-md rounded-md italic font-bold flex h-1/3 w-2/3 flex-col gap-y-4 overflow-x-hidden px-10 pb-28 pt-12 max-w-xl">
                 <label htmlFor='username' > Username</label>
-                <Input name="username" type="text" defaultValue='username'/>
+                <Input name="username" type="text" defaultValue='username' required={true} />
                 <label htmlFor='password'> Password</label>
-                <Input name="password" type="password" />
+                <Input name="password" type="password" required={true} />
                 <Button className='relative top-8 hover:bg-yellow-500 italic bg-yellow-300 w-1/3 self-center px-4 py-2'>submit</Button>
             </Form>
         </div>
